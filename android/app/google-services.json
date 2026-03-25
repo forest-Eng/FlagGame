@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "779746941883",
+    "project_id": "flaggame-39492",
+    "storage_bucket": "flaggame-39492.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779746941883:android:bb27774e4b67cd4cff429e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyrx8ysNLWVKIAcVzujNHJh1qVU4WfRBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -35,6 +35,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_tts: ^4.2.5
+  firebase_core: ^4.6.0
+  firebase_analytics: ^12.2.0
 
 #音を鳴らす
 beep_dependencies:
