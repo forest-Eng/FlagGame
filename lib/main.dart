@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
 
@@ -45,6 +46,7 @@ class _FlagGamePageState extends State<FlagGamePage> {
   final Random _random = Random();
 
   Timer? _timer;
+  bool _isPrivacyDialogShown = false;
 
   final List<String> _instructions = <String>[
     '赤上げて',
@@ -68,12 +70,59 @@ class _FlagGamePageState extends State<FlagGamePage> {
   void initState() {
     super.initState();
     _logScreenView();
+    _checkAndShowPrivacyDialog();
   }
 
   @override
   void dispose() {
     _timer?.cancel();
     super.dispose();
+  }
+
+  Future<void> _checkAndShowPrivacyDialog() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool alreadyShown = prefs.getBool('privacy_dialog_shown') ?? false;
+
+    if (alreadyShown || _isPrivacyDialogShown || !mounted) {
+      return;
+    }
+
+    _isPrivacyDialogShown = true;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      _showPrivacyDialog();
+    });
+  }
+
+  Future<void> _showPrivacyDialog() async {
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('データ利用について'),
+          content: const Text(
+            '本アプリでは、サービス改善のため Firebase Analytics を使用しています。\n\n'
+            '利用状況や操作履歴を匿名で収集しますが、個人を特定する情報は含まれません。',
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () async {
+                final SharedPreferences prefs =
+                    await SharedPreferences.getInstance();
+                await prefs.setBool('privacy_dialog_shown', true);
+
+                if (context.mounted) {
+                  Navigator.of(context).pop();
+                }
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> _logScreenView() async {
