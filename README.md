@@ -1,4 +1,24 @@
-# flutter_application_3
+# Flag Game
+
+赤と白の指示に従ってボタンを押す反射神経ゲームです。
+
+## 概要
+シンプルな操作で遊べる脳トレゲームです。
+制限時間内に正しい操作を行い、スコアを伸ばします。
+
+## 技術
+- Flutter
+- Firebase Analytics
+
+## 特徴
+- 10秒制限
+- ランダム指示
+- スコア表示
+
+## 今後の予定
+- 音の追加
+- UI改善
+- ランキング機能# flutter_application_3
 
 A new Flutter project.
 
