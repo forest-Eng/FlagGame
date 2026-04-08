@@ -1,37 +1,37 @@
-# Flag Game
+# フラッグゲーム
 
-赤と白の指示に従ってボタンを押す反射神経ゲームです。
+赤と白の指示に従ってボタンを押す、反射神経トレーニングゲームです。
 
 ## 概要
-シンプルな操作で遊べる脳トレゲームです。
+シンプルな操作で遊べる脳トレゲームです。  
 制限時間内に正しい操作を行い、スコアを伸ばします。
 
-## 技術
+## 主な機能
+- 10秒以内の時間制限
+- ランダムな指示表示
+- 同じ指示が連続しにくい仕組み
+- ゲーム終了時のスコア表示
+
+## 使い方
+1. ゲーム開始ボタンを押します
+2. 表示された指示に従って、赤または白のボタンを押します
+3. 制限時間内に操作できなかった場合は、次の指示へ進みます
+4. ゲーム終了ボタンで終了し、スコアを確認できます
+
+## 使用技術
 - Flutter
+- Dart
 - Firebase Analytics
 
-## 特徴
-- 10秒制限
-- ランダム指示
-- スコア表示
+## 工夫した点
+- 制限時間を設け、緊張感のあるゲーム性にしたこと
+- シンプルで分かりやすい画面構成にしたこと
+- スコア表示により繰り返し遊びやすくしたこと
 
-## 今後の予定
-- 音の追加
-- UI改善
-- ランキング機能# flutter_application_3
+## 今後の改善予定
+- 効果音の追加
+- ランキング機能の追加
+- UIの改善
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 備考
+このアプリはFlutter学習とアプリ公開の経験を兼ねて制作しました。
