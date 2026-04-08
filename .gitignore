@@ -12,6 +12,11 @@
 .swiftpm/
 migrate_working_dir/
 
+.vscode_backup/
+.idea/
+build/
+.dart_tool/
+
 # IntelliJ related
 *.iml
 *.ipr
