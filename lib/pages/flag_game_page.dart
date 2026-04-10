@@ -192,6 +192,62 @@ class _FlagGamePageState extends State<FlagGamePage> {
     return _remainingSeconds <= 3 ? Colors.red : Colors.black;
   }
 
+  Widget _buildRedButton(String label, bool isUp) {
+    return SizedBox(
+      width: double.infinity,
+      height: double.infinity,
+      child: ElevatedButton(
+        onPressed: () {
+          _handleTap(isRed: true, isUp: isUp);
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: Text(
+          label,
+          style: const TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildWhiteButton(String label, bool isUp) {
+    return SizedBox(
+      width: double.infinity,
+      height: double.infinity,
+      child: OutlinedButton(
+        onPressed: () {
+          _handleTap(isRed: false, isUp: isUp);
+        },
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          side: const BorderSide(
+            color: Colors.black,
+            width: 2,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+        child: Text(
+          label,
+          style: const TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -258,62 +314,42 @@ class _FlagGamePageState extends State<FlagGamePage> {
                 color: _timerColor(),
               ),
             ),
-            const SizedBox(height: 30),
-            Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 180,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      _handleTap(isRed: true, isUp: true);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: const Text(
-                      '上',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                      ),
+            const SizedBox(height: 20),
+
+            Expanded(
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: _buildRedButton('赤 上げて', true),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: _buildWhiteButton('白 上げて', true),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                const SizedBox(height: 16),
-                SizedBox(
-                  height: 180,
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      _handleTap(isRed: false, isUp: false);
-                    },
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      side: const BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    child: const Text(
-                      '下',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  const SizedBox(height: 12),
+                  Expanded(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: _buildRedButton('赤 下げて', false),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: _buildWhiteButton('白 下げて', false),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
+
             const SizedBox(height: 20),
             Row(
               children: <Widget>[
