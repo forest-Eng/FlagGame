@@ -53,10 +53,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCyrx8ysNLWVKIAcVzujNHJh1qVU4WfRBM',
-    appId: '1:779746941883:android:bb27774e4b67cd4cff429e',
-    messagingSenderId: '779746941883',
-    projectId: 'flaggame-39492',
-    storageBucket: 'flaggame-39492.firebasestorage.app',
+    apiKey: 'AIzaSyAGojUqu70ObI8vnc2xqWPlPplEiEAoBh4',
+    appId: '1:742889653716:android:cac592d52577bff4d2c241',
+    messagingSenderId: '742889653716',
+    projectId: 'flaggame-4ae59',
+    storageBucket: 'flaggame-4ae59.firebasestorage.app',
   );
+
 }

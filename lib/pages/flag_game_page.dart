@@ -204,7 +204,7 @@ class _FlagGamePageState extends State<FlagGamePage> {
           backgroundColor: Colors.red,
           foregroundColor: Colors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(100),
           ),
         ),
         child: Text(
@@ -234,7 +234,7 @@ class _FlagGamePageState extends State<FlagGamePage> {
             width: 2,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(100),
           ),
         ),
         child: Text(
@@ -323,11 +323,11 @@ class _FlagGamePageState extends State<FlagGamePage> {
                     child: Row(
                       children: <Widget>[
                         Expanded(
-                          child: _buildRedButton('赤 上げて', true),
+                          child: _buildRedButton('上げる', true),
                         ),
                         const SizedBox(width: 12),
                         Expanded(
-                          child: _buildWhiteButton('白 上げて', true),
+                          child: _buildWhiteButton('上げる', true),
                         ),
                       ],
                     ),
@@ -337,11 +337,11 @@ class _FlagGamePageState extends State<FlagGamePage> {
                     child: Row(
                       children: <Widget>[
                         Expanded(
-                          child: _buildRedButton('赤 下げて', false),
+                          child: _buildRedButton('下げる', false),
                         ),
                         const SizedBox(width: 12),
                         Expanded(
-                          child: _buildWhiteButton('白 下げて', false),
+                          child: _buildWhiteButton('下げる', false),
                         ),
                       ],
                     ),

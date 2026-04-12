@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "779746941883",
-    "project_id": "flaggame-39492",
-    "storage_bucket": "flaggame-39492.firebasestorage.app"
+    "project_number": "742889653716",
+    "project_id": "flaggame-4ae59",
+    "storage_bucket": "flaggame-4ae59.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:779746941883:android:bb27774e4b67cd4cff429e",
+        "mobilesdk_app_id": "1:742889653716:android:cac592d52577bff4d2c241",
         "android_client_info": {
           "package_name": "com.example.flutter_application_3"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCyrx8ysNLWVKIAcVzujNHJh1qVU4WfRBM"
+          "current_key": "AIzaSyAGojUqu70ObI8vnc2xqWPlPplEiEAoBh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742889653716:android:ba0050334e2664b9d2c241",
+        "android_client_info": {
+          "package_name": "com.shigeru.flaggame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGojUqu70ObI8vnc2xqWPlPplEiEAoBh4"
         }
       ],
       "services": {
