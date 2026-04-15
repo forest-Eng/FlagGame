@@ -1,7 +1,8 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'firebase_options.dart';
+import 'services/privacy_service.dart';
 import 'pages/flag_game_page.dart';
 
 Future<void> main() async {
@@ -10,6 +11,8 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await PrivacyService.applySavedConsentToAnalytics();
 
   runApp(const MyApp());
 }
@@ -20,11 +23,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flag Game',
+      title: 'FlagGame',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
       home: const FlagGamePage(),
     );
   }

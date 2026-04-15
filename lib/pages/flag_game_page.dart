@@ -46,10 +46,10 @@ class _FlagGamePageState extends State<FlagGamePage> {
   }
 
   Future<void> _checkAndShowPrivacyDialog() async {
-    final bool alreadyShown = await PrivacyService.isPrivacyDialogShown();
+    final bool alreadyAnswered = await PrivacyService.isConsentAnswered();
 
-    if (alreadyShown || _isPrivacyDialogShownInSession || !mounted) {
-      return;
+    if (alreadyAnswered || _isPrivacyDialogShownInSession || !mounted) {
+       return;
     }
 
     _isPrivacyDialogShownInSession = true;
@@ -67,7 +67,7 @@ class _FlagGamePageState extends State<FlagGamePage> {
       builder: (BuildContext context) {
         return PrivacyDialog(
           onOkPressed: () async {
-            await PrivacyService.setPrivacyDialogShown();
+            await PrivacyService.acceptPrivacy();
           },
         );
       },
