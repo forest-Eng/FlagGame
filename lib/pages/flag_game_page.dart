@@ -198,6 +198,8 @@ class _FlagGamePageState extends State<FlagGamePage> {
       height: double.infinity,
       child: ElevatedButton(
         onPressed: () {
+          print("RED button tapped");
+
           _handleTap(isRed: true, isUp: isUp);
         },
         style: ElevatedButton.styleFrom(
@@ -224,6 +226,8 @@ class _FlagGamePageState extends State<FlagGamePage> {
       height: double.infinity,
       child: OutlinedButton(
         onPressed: () {
+          print("WHITE button tapped");
+          
           _handleTap(isRed: false, isUp: isUp);
         },
         style: OutlinedButton.styleFrom(

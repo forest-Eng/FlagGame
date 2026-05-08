@@ -1,4 +1,4 @@
-package com.shigeru.flaggame
+package com.foresteng.flaggame
 
 import io.flutter.embedding.android.FlutterActivity
 
