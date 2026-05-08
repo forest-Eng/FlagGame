@@ -23,7 +23,7 @@ dependencies {
 }
 
 android {
-    namespace = "com.shigeru.flaggame"
+    namespace = "com.foresteng.flaggame"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -38,7 +38,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.shigeru.flaggame"
+        applicationId = "com.foresteng.flaggame"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
