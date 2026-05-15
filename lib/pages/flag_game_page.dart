@@ -196,25 +196,29 @@ class _FlagGamePageState extends State<FlagGamePage> {
     return SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: ElevatedButton(
-        onPressed: () {
-          print("RED button tapped");
-
-          _handleTap(isRed: true, isUp: isUp);
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTapDown: (_) {
+          debugPrint("RED area tap down label=$label isUp=$isUp");
         },
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.red,
-          foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
-          ),
-        ),
-        child: Text(
-          label,
-          style: const TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
+        onTap: () {
+           debugPrint("RED button tapped label=$label isUp=$isUp");
+            _handleTap(isRed: true, isUp: isUp);
+        },
+        child: Container(
+         alignment: Alignment.center,
+         decoration: BoxDecoration(
+           color: Colors.red,
+           borderRadius: BorderRadius.circular(100),
+         ),
+         child: Text(
+           label,
+           style: const TextStyle(
+             color: Colors.white,
+             fontSize: 28,
+             fontWeight: FontWeight.bold,
+           ),
+         ),
         ),
       ),
     );
@@ -224,29 +228,29 @@ class _FlagGamePageState extends State<FlagGamePage> {
     return SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: OutlinedButton(
-        onPressed: () {
-          print("WHITE button tapped");
-          
-          _handleTap(isRed: false, isUp: isUp);
+     child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTapDown: (_) {
+          debugPrint("WHITE area tap down label=$label isUp=$isUp");
         },
-        style: OutlinedButton.styleFrom(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          side: const BorderSide(
-            color: Colors.black,
-            width: 2,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(100),
-          ),
-        ),
-        child: Text(
-          label,
-          style: const TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
+        onTap: () {
+           debugPrint("WHITE button tapped label=$label isUp=$isUp");
+            _handleTap(isRed: true, isUp: isUp);
+        },
+        child: Container(
+         alignment: Alignment.center,
+         decoration: BoxDecoration(
+           color: Colors.white,
+           borderRadius: BorderRadius.circular(100),
+         ),
+         child: Text(
+           label,
+           style: const TextStyle(
+             color: Colors.black,
+             fontSize: 28,
+             fontWeight: FontWeight.bold,
+           ),
+         ),
         ),
       ),
     );
