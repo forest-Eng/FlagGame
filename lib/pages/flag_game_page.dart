@@ -200,9 +200,11 @@ class _FlagGamePageState extends State<FlagGamePage> {
         behavior: HitTestBehavior.translucent,
         onTapDown: (_) {
           debugPrint("RED area tap down label=$label isUp=$isUp");
+          _handleTap(isRed: true, isUp: isUp);
         },
-        onTap: () {
-           debugPrint("RED button tapped label=$label isUp=$isUp");
+        onTap: null,
+        onTapCancel: () {
+           debugPrint("RED tapCancel tapped label=$label isUp=$isUp");
             _handleTap(isRed: true, isUp: isUp);
         },
         child: Container(
@@ -232,9 +234,11 @@ class _FlagGamePageState extends State<FlagGamePage> {
         behavior: HitTestBehavior.translucent,
         onTapDown: (_) {
           debugPrint("WHITE area tap down label=$label isUp=$isUp");
+          _handleTap(isRed: true, isUp: isUp);
         },
-        onTap: () {
-           debugPrint("WHITE button tapped label=$label isUp=$isUp");
+        onTap: null,
+        onTapCancel: () {
+           debugPrint("WHITE tapCancel tapped label=$label isUp=$isUp");
             _handleTap(isRed: true, isUp: isUp);
         },
         child: Container(
