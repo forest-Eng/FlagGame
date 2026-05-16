@@ -32,6 +32,11 @@ class _FlagGamePageState extends State<FlagGamePage> {
   bool _isPlaying = false;
   DateTime? _gameStartTime;
 
+  Color redUpButtonColor = Colors.red;
+  Color redDownButtonColor = Colors.red;
+  Color whiteUpButtonColor = Colors.white;
+  Color whiteDownButtonColor = Colors.white;
+
   @override
   void initState() {
     super.initState();
@@ -200,18 +205,52 @@ class _FlagGamePageState extends State<FlagGamePage> {
         behavior: HitTestBehavior.translucent,
         onTapDown: (_) {
           debugPrint("RED area tap down label=$label isUp=$isUp");
+          setState(() {
+            if (isUp) {
+              redUpButtonColor = Colors.orange.shade400;
+            } else {
+              redDownButtonColor = Colors.orange.shade400;
+            }
+          });
           _handleTap(isRed: true, isUp: isUp);
+          Future.delayed(const Duration(milliseconds: 100), () {
+            if (!mounted) return;
+            setState(() {
+              if (isUp) {
+                redUpButtonColor = Colors.red;
+              } else {
+                redDownButtonColor = Colors.red;
+              }
+            });
+          });
         },
-        onTap: null,
+        onTapUp: (_) {
+        //   debugPrint("RED tap Up tapped label=$label isUp=$isUp");
+          setState(() {
+            if (isUp) {
+              redUpButtonColor = Colors.red;
+            } else {
+              redDownButtonColor = Colors.red;
+            }
+          });
+        },
+        // onTap: null,
         onTapCancel: () {
-           debugPrint("RED tapCancel tapped label=$label isUp=$isUp");
-            _handleTap(isRed: true, isUp: isUp);
+          debugPrint("RED tap Cancel tapped label=$label isUp=$isUp");
+          setState(() {
+            if (isUp) {
+              redUpButtonColor = Colors.red;
+            } else {
+              redDownButtonColor = Colors.red;
+            }
+          });
+          // _handleTap(isRed: true, isUp: isUp);
         },
         child: Container(
          alignment: Alignment.center,
          decoration: BoxDecoration(
-           color: Colors.red,
-           borderRadius: BorderRadius.circular(100),
+            color: isUp ? redUpButtonColor : redDownButtonColor,
+            borderRadius: BorderRadius.circular(100),
          ),
          child: Text(
            label,
@@ -234,17 +273,50 @@ class _FlagGamePageState extends State<FlagGamePage> {
         behavior: HitTestBehavior.translucent,
         onTapDown: (_) {
           debugPrint("WHITE area tap down label=$label isUp=$isUp");
+          setState(() {
+            if (isUp) {
+              whiteUpButtonColor = const Color.fromARGB(255, 181, 180, 180);
+            } else {
+              whiteDownButtonColor = const Color.fromARGB(255, 181, 180, 180);
+            }
+          });
           _handleTap(isRed: true, isUp: isUp);
+          Future.delayed(const Duration(milliseconds: 100), () {
+            if (!mounted) return;
+            setState(() {
+              if (isUp) {
+                whiteUpButtonColor = Colors.white;
+              } else {
+                whiteDownButtonColor = Colors.white;
+              }
+            });
+          });
+        },
+        onTapUp: (_) {
+        //   debugPrint("RED tap Up tapped label=$label isUp=$isUp");
+          setState(() {
+            if (isUp) {
+              whiteUpButtonColor = Colors.white;
+            } else {
+              whiteDownButtonColor = Colors.white;
+            }
+          });
         },
         onTap: null,
         onTapCancel: () {
-           debugPrint("WHITE tapCancel tapped label=$label isUp=$isUp");
-            _handleTap(isRed: true, isUp: isUp);
+          debugPrint("WHITE tapCancel tapped label=$label isUp=$isUp");
+          setState(() {
+            if (isUp) {
+              whiteUpButtonColor = Colors.white;
+            } else {
+              whiteDownButtonColor = Colors.white;
+            }
+          });
         },
         child: Container(
          alignment: Alignment.center,
          decoration: BoxDecoration(
-           color: Colors.white,
+            color: isUp ? whiteUpButtonColor : whiteDownButtonColor,
            borderRadius: BorderRadius.circular(100),
          ),
          child: Text(
