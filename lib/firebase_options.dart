@@ -17,29 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -54,10 +42,48 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAGojUqu70ObI8vnc2xqWPlPplEiEAoBh4',
-    appId: '1:742889653716:android:cac592d52577bff4d2c241',
+    appId: '1:742889653716:android:d57ed6ee44089034d2c241',
     messagingSenderId: '742889653716',
     projectId: 'flaggame-4ae59',
     storageBucket: 'flaggame-4ae59.firebasestorage.app',
+  );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyA5efahNbJqwBAF6ONAJ60JFkL3reH5lgo',
+    appId: '1:742889653716:web:a260e2cc2c9cf159d2c241',
+    messagingSenderId: '742889653716',
+    projectId: 'flaggame-4ae59',
+    authDomain: 'flaggame-4ae59.firebaseapp.com',
+    storageBucket: 'flaggame-4ae59.firebasestorage.app',
+    measurementId: 'G-L4J39F3WGB',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBWVC6ioB3pLOlEC9R2PW47zyMcqh5CPyw',
+    appId: '1:742889653716:ios:018c9b7080a5141cd2c241',
+    messagingSenderId: '742889653716',
+    projectId: 'flaggame-4ae59',
+    storageBucket: 'flaggame-4ae59.firebasestorage.app',
+    iosBundleId: 'com.example.flutterApplication3',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBWVC6ioB3pLOlEC9R2PW47zyMcqh5CPyw',
+    appId: '1:742889653716:ios:018c9b7080a5141cd2c241',
+    messagingSenderId: '742889653716',
+    projectId: 'flaggame-4ae59',
+    storageBucket: 'flaggame-4ae59.firebasestorage.app',
+    iosBundleId: 'com.example.flutterApplication3',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyA5efahNbJqwBAF6ONAJ60JFkL3reH5lgo',
+    appId: '1:742889653716:web:041c159c5ae3b25fd2c241',
+    messagingSenderId: '742889653716',
+    projectId: 'flaggame-4ae59',
+    authDomain: 'flaggame-4ae59.firebaseapp.com',
+    storageBucket: 'flaggame-4ae59.firebasestorage.app',
+    measurementId: 'G-75YH3L3TXZ',
   );
 
 }

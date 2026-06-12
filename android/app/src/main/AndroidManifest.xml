@@ -5,7 +5,7 @@
         android:name="com.google.android.gms.permission.AD_ID"
         tools:node="remove" />
     <application
-        android:label="flutter_application_3"
+        android:label="旗揚げゲーム"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
