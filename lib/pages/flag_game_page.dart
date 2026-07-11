@@ -280,7 +280,7 @@ class _FlagGamePageState extends State<FlagGamePage> {
               whiteDownButtonColor = const Color.fromARGB(255, 181, 180, 180);
             }
           });
-          _handleTap(isRed: true, isUp: isUp);
+          _handleTap(isRed: false, isUp: isUp);
           Future.delayed(const Duration(milliseconds: 100), () {
             if (!mounted) return;
             setState(() {
